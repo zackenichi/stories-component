@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.slider {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.image {
+  width: 352px;
+  height: 352px;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+  cursor: pointer;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 0.5s;
+  /*transform: scale(1.08); */
+}
+
+.slide img:hover {
+  animation: ken-burns 7s ease;
+  -ms-animation: ken-burns 7s ease;
+  -webkit-animation: ken-burns 7s ease;
+  -0-animation: ken-burns 7s ease;
+  -moz-animation: ken-burns 7s ease;
+}
+
+.slide {
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+@keyframes ken-burns {
+  0% {
+    -webkit-transform-origin: bottom left;
+    -moz-transform-origin: bottom left;
+    -ms-transform-origin: bottom left;
+    -o-transform-origin: bottom left;
+    transform-origin: bottom left;
+    transform: scale(1);
+    -ms-transform: scale(1);
+    /* IE 9 */
+
+    -webkit-transform: scale(1);
+    /* Safari and Chrome */
+
+    -o-transform: scale(1);
+    /* Opera */
+
+    -moz-transform: scale(1);
+    /* Firefox */
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    /* IE 9 */
+
+    -webkit-transform: scale(1.2);
+    /* Safari and Chrome */
+
+    -o-transform: scale(1.2);
+    /* Opera */
+
+    -moz-transform: scale(1.2);
+    /* Firefox */
+  }
+}
+
+@-webkit-keyframes ken-burns {
+  0% {
+    -webkit-transform-origin: bottom left;
+    -moz-transform-origin: bottom left;
+    -ms-transform-origin: bottom left;
+    -o-transform-origin: bottom left;
+    transform-origin: bottom left;
+    transform: scale(1);
+    -ms-transform: scale(1);
+    /* IE 9 */
+
+    -webkit-transform: scale(1);
+    /* Safari and Chrome */
+
+    -o-transform: scale(1);
+    /* Opera */
+
+    -moz-transform: scale(1);
+    /* Firefox */
+  }
+  100% {
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    /* IE 9 */
+
+    -webkit-transform: scale(1.2);
+    /* Safari and Chrome */
+
+    -o-transform: scale(1.2);
+    /* Opera */
+
+    -moz-transform: scale(1.2);
+    /* Firefox */
   }
 }
